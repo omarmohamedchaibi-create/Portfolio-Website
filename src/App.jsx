@@ -4,17 +4,17 @@ const projects = [
   {
     title: 'Personal Portfolio Website',
     description:
-      'A modern personal website to showcase skills, projects, and contact information.',
+      'A refined portfolio with clean structure, modern motion, and strong visual hierarchy.',
   },
   {
     title: 'Business Landing Page',
     description:
-      'Clean and conversion-focused landing page for small businesses.',
+      'A polished landing experience designed to convert visitors into customers.',
   },
   {
     title: 'Portfolio Redesign',
     description:
-      'Improved UI/UX with better readability and mobile optimization.',
+      'A refreshed interface with improved readability, responsiveness, and polish.',
   },
 ]
 
@@ -28,8 +28,8 @@ const skills = [
 function SectionTitle({ title, subtitle }) {
   return (
     <div className="mb-10 text-center reveal">
-      <h2 className="text-3xl font-semibold text-white">{title}</h2>
-      <p className="mt-2 text-white/60">{subtitle}</p>
+      <p className="text-sm uppercase tracking-[0.32em] text-fuchsia-300/70">{subtitle}</p>
+      <h2 className="mt-4 text-3xl font-semibold text-white sm:text-4xl">{title}</h2>
     </div>
   )
 }
@@ -37,16 +37,26 @@ function SectionTitle({ title, subtitle }) {
 function SkillBar({ name, value }) {
   return (
     <div className="reveal">
-      <div className="mb-2 flex justify-between text-sm">
-        <span className="text-white/80">{name}</span>
-        <span className="font-medium text-fuchsia-200">{value}%</span>
+      <div className="mb-3 flex justify-between text-sm text-white/70">
+        <span>{name}</span>
+        <span className="font-semibold text-white">{value}%</span>
       </div>
-      <div className="h-2 overflow-hidden rounded-full bg-white/10">
+      <div className="h-3 overflow-hidden rounded-full bg-white/10">
         <div
-          className="skill-fill h-full rounded-full bg-linear-to-r from-fuchsia-400 to-violet-300"
+          className="skill-fill h-full rounded-full bg-gradient-to-r from-fuchsia-400 to-violet-300"
           style={{ width: `${value}%` }}
         />
       </div>
+    </div>
+  )
+}
+
+function StatCard({ label, value, description }) {
+  return (
+    <div className="glass-card rounded-[2rem] border border-white/10 bg-white/5 p-6 text-left">
+      <p className="text-sm uppercase tracking-[0.24em] text-white/50">{label}</p>
+      <p className="mt-4 text-3xl font-semibold text-white">{value}</p>
+      <p className="mt-2 text-sm leading-relaxed text-white/60">{description}</p>
     </div>
   )
 }

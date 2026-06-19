@@ -1,13 +1,36 @@
 @import "tailwindcss";
 
+:root {
+  color-scheme: dark;
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  line-height: 1.5;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 88px;
 }
 
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: radial-gradient(circle at top left, rgba(168, 85, 247, 0.18), transparent 22%),
+    radial-gradient(circle at top right, rgba(59, 130, 246, 0.14), transparent 18%),
+    linear-gradient(180deg, #050816 0%, #080b13 100%);
+  color: #e5e7eb;
+}
+
+#app {
+  min-height: 100vh;
+}
+
 .reveal {
   opacity: 0;
-  transform: translateY(20px) scale(0.98);
+  transform: translateY(24px) scale(0.98);
   transition: opacity 650ms ease, transform 650ms ease;
 }
 
@@ -19,26 +42,26 @@ html {
 .floating-blob {
   position: fixed;
   border-radius: 9999px;
-  filter: blur(60px);
+  filter: blur(80px);
   z-index: -10;
   pointer-events: none;
   opacity: 0.45;
-  animation: floatBlob 15s ease-in-out infinite;
+  animation: floatBlob 18s ease-in-out infinite;
 }
 
 .blob-1 {
-  width: 340px;
-  height: 340px;
-  left: 6%;
+  width: 360px;
+  height: 360px;
+  left: 4%;
   top: 4%;
   background: rgba(217, 70, 239, 0.32);
 }
 
 .blob-2 {
-  width: 300px;
-  height: 300px;
-  right: 8%;
-  top: 16%;
+  width: 320px;
+  height: 320px;
+  right: 6%;
+  top: 18%;
   background: rgba(139, 92, 246, 0.26);
   animation-delay: -4s;
 }
@@ -46,14 +69,14 @@ html {
 .blob-3 {
   width: 280px;
   height: 280px;
-  left: 38%;
+  left: 40%;
   bottom: 8%;
   background: rgba(168, 85, 247, 0.24);
   animation-delay: -8s;
 }
 
 .skill-fill {
-  animation: skillPulse 2.8s ease-in-out infinite;
+  animation: skillPulse 3s ease-in-out infinite;
 }
 
 .shine-btn {
@@ -75,6 +98,10 @@ html {
 
 .shine-btn:hover::after {
   left: 160%;
+}
+
+.glass-card {
+  backdrop-filter: blur(16px);
 }
 
 @keyframes floatBlob {
